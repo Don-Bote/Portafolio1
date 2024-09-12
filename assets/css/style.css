@@ -1,0 +1,153 @@
+
+.rosado{
+    background-color: pink;
+}
+
+.verde{
+    background-color: green;
+}
+
+.azul{
+    background-color: blue;
+}
+
+.rojo{
+    background-color: red;
+}
+
+.morado{
+    background-color: purple;
+}
+
+.gris{
+    background-color: gray;
+}
+
+#muestrario3{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    height: 100vh;
+}
+
+.muestrario{
+    display: none;
+}
+
+/* Pantalla pequeña (<=500px) */
+@media(max-width:500px){
+    body{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(20, 1fr);
+    }
+    
+    .rosado{
+        grid-row:1/6;
+    }
+     
+    .verde{
+        grid-row:6/11;
+    }
+     
+    .azul{
+        grid-row:11/14;
+    }
+     
+    .rojo{
+        display: none;
+    }
+ 
+    .morado{
+        display: none;
+         
+    }
+    .gris{
+        grid-row: 14/21;
+    }
+}
+
+/* Pantalla mediana (>=501px y <=750) */
+@media(min-width:501px)and (max-width:750px){
+    body{
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(18, 1fr);
+    }
+    
+    .rosado{
+        grid-column: 1/13;
+        grid-row: 1/6;
+
+    }
+    .verde{
+        grid-column: 1/5;
+        grid-row: 6/11;
+        margin-right: 2px;
+        margin-bottom: 2px;
+    }
+    
+    .azul{
+        grid-column: 5/9;
+        grid-row: 6/11;
+        margin-left: 2px;
+        margin-right: 2px;
+        margin-bottom: 2px;
+    }
+    
+    .rojo{
+        grid-column: 9/13;
+        grid-row: 6/11;
+        margin-left: 2px;
+        margin-bottom: 2px;
+    }
+
+    .morado{
+        grid-column: 1/8;
+        grid-row: 11/19;
+        margin-right: 2px;
+        margin-top: 2px;
+    }
+
+    .gris{
+        grid-column: 8/13;
+        grid-row: 11/19;
+        margin-left: 2px;
+        margin-top: 2px;
+    }
+}
+
+/* Pantalla grande (>=751px)*/
+@media(min-width:751px){
+    body{
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+    }
+    
+    .rosado{
+        grid-column: 1/13;
+        grid-row: 1/2;
+    }
+    .verde{
+        grid-column: 1/13;
+        grid-row: 2/5;
+    }
+    
+    .azul{
+        grid-column: 1/13;
+        grid-row: 5/10;
+    }
+    
+    .rojo{
+        grid-column: 1/5;
+        grid-row: 10/13;
+    }
+
+    .morado{
+        grid-column: 5/9;
+        grid-row: 10/13;
+    }
+
+    .gris{
+        grid-column: 9/13;
+        grid-row: 10/13;
+    }
+}

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Conexion Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--Conexion Css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Conexion jQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--Icono Pestaña-->
+    <link rel="shortcut icon" href="assets/img/portafolio.png">
+    <title>Portafolio Personal </title>
+</head>
+<body data-bs-theme="light">
+    <!--BARRA DE NAVEGACION-->  
+    <nav class="navbar navbar-expand-lg bg-warning fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-2 text-black fw-bold" href="#">
+                <img src="assets/img/img-miniatura.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
+                Portafolio Personal
+            </a>
+            <button class="navbar-toggler text-black" type="button" data-bs-theme="light" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-black"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-black" id="nav-item1">Información personal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" id="nav-item2">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" id="nav-item3">Proyectos Realizados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" id="nav-item4">Formulario de contacto</a>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-warning me-2" data-bs-toggle="modal" data-bs-target="#newsletter"> <img src="https://cdn-icons-gif.flaticon.com/15748/15748308.gif" width="40px" height="40px" border-radius="20px" class="d-inline-block rounded"> </button>
+                <button type="button" class="btn btn-warning me-2" data-bs-toggle="modal" id="boton-noche" onclick="modoNoche()"><img src="https://cdn-icons-gif.flaticon.com/11708/11708865.gif" alt="Modo Dia" width="40px" height="40px" border-radius="20px" class="d-inline-block rounded"> </button>
+            </div>
+        </div>
+    </nav>
+
+    <!--DIV OCULTO ATRAS DE NAVBAR-->
+    <div style="height: 50px;"></div>
+    <!--DIV DE TODO EL BODY SIN NAVBAR-->
+     
+        
+        <!-- BOTON SUSCRIBETE AL NEWSLETTER -->
+        <div class="modal fade" id="newsletter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 fw-bold" id="newsletterLabel">Suscribete a mi Newsletter</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="formnewsletter">
+                        <div class="mb-3 mx-2">
+                                <label for="nombrenewsletter" class="form-label fw-bold">Nombre</label>
+                                <input type="text" class="form-control" id="nombrenewsletter" placeholder="Marcos" required>
+                        </div>
+                        <div class="mb-3 mx-2">
+                            <label for="apellidonewsletter" class="form-label fw-bold">Apellido</label>
+                            <input type="text" class="form-control" id="apellidonewsletter" placeholder="Ortega" required>
+                        </div>
+                        <div class="mb-3 mx-2">
+                            <label for="Emailnewsletter" class="form-label fw-bold">Email</label>
+                            <input type="email" class="form-control" id="Emailnewsletter" placeholder="marcos.ortega@ejemplo.com" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required>
+                            <div id="emailHelp" class="form-text">Nunca compartiremos tu Email con nadie</div>
+                        </div>
+                        <div class="mb-3 mx-2 ">
+                        <button type="submit" class="btn btn-warning d-block mx-auto fw-bold">Suscribete !</button>
+                        </div>
+                    </form>
+                    <div id="alertnewsletter" class="alert alert-warning fw-bold" role="alert" style="display:none;">
+                      <i class="bi bi-check-circle-fill"></i> Suscrito al Newsletters de Sebastián !
+                    </div>
+                    <div class="modal-footer center-block">
+                        <button type="button" class="btn btn-warning fw-bold" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--INFORMACION PERSONAL-->        
+        <div class="container-fluid py-4 mb-5 border border-2 rounded " id="divinformacion" style="background-image: url('https://initiate.alphacoders.com/images/430/cropped-1920-1080-430541.jpg?4657'); background-repeat: no-repeat;background-size: cover; color: #dfdfdf; text-shadow: 1px 1px 2px black;">
+            <p class="h5"><br></p>
+            <p class="display-2 text-center fw-bold ">Desarrollo Front-End</p>
+            <p class="h2 text-center fw-bold "><br>Sebastian Collao Galdames</p>
+            <p class="h4 text-center fst-italic ">Viña del Mar <br><br></p>
+            <div class="container-sm">
+            <p class="h5">¡Hola! Soy Sebastián, un desarrollador front-end junior con una licenciatura en Ingeniería Civil Industrial. Mi pasión por la tecnología y el desarrollo web me lleva a explorar constantemente nuevas herramientas y tendencias. Además de mi interés en el software, tengo una gran fascinación por el hardware, los videojuegos, y diversas áreas prácticas como la construcción, gasfitería, mecánica y electricidad. Esta combinación de conocimientos y habilidades me permite abordar los desafíos de manera integral y creativa. Estoy entusiasmado por aportar mi energía y experiencia a proyectos innovadores y seguir creciendo en este apasionante campo. ¡Gracias por visitar mi página y espero conectar contigo pronto!<br><br><br><br><br><br><br></p>
+            </div>
+        </div>
+        
+
+        <!--HABILIDADES-->
+        <div class="container-sm py-4 mb-5 border border-2 rounded" id="divhabilidades">
+            <h1>Habilidades y Conocimientos</h1>
+        <div>
+        <h4 class="m-4">Habilidades Técnicas</h4>    
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="habjs ms-2 me-auto">
+                <div class="fw-bold">Lenguajes de Programación:</div>
+                <ul>
+                    <li><strong>HTML:</strong> Estructura de contenido web.</li>
+                    <li><strong>CSS:</strong> Diseño y estilo de la web.</li>
+                    <li><strong>JavaScript:</strong> Interactividad y dinámicas en la web.</li>
+                </ul>
+            </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="habjs ms-2 me-auto">
+                <div class="fw-bold">Frameworks y Librerías:</div>
+                <ul>
+                    <li><strong>Bootstrap:</strong> Conjunto de herramientas de código abierto para diseño de sitios y aplicaciones web.</li>
+                    <li><strong>Jquery:</strong> Es biblioteca multiplataforma de JavaScript, que permite interactuar con los documentos HTML, manipular el árbol DOM, manejar eventos, desarrollar animaciones.</li>
+                </ul>
+            </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="habjs ms-2 me-auto">
+                <div class="fw-bold">Herramientas y Tecnologías Relacionadas:</div>
+                <ul>
+                    <li><strong>Control de Versiones:</strong> Git y plataformas como GitHub o GitLab.</li>
+                </ul>
+            </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="habjs ms-2 me-auto">
+                <div class="fw-bold">Diseño Responsivo y Mobile-First:</div>
+                <ul>
+                    <li>Uso de técnicas de diseño responsivo para garantizar que las aplicaciones funcionen bien en diferentes dispositivos y tamaños de pantalla.</li>
+                </ul>
+                </div>
+            </li>
+        </ol>
+        </div>
+        <h4 class="m-4">Competencias blandas</h4>    
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="habjs ms-2 me-auto">
+                <div class="fw-bold">Resolución de Problemas:</div>
+                <ul>
+                    <li>Habilidad para identificar y solucionar problemas técnicos y de diseño.</li>
+                </ul>
+            </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="habjs ms-2 me-auto">
+                <div class="fw-bold">Comunicación:</div>
+                <ul>
+                    <li>Capacidad para comunicarse efectivamente con diseñadores, desarrolladores back end y otros miembros del equipo.</li>
+                </ul>
+            </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="habjs ms-2 me-auto">
+                <div class="fw-bold">Trabajo en Equipo:</div>
+                <ul>
+                    <li>Colaborar eficazmente en equipos multifuncionales.</li>
+                </ul>
+            </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="habjs ms-2 me-auto">
+                <div class="fw-bold">Adaptabilidad:</div>
+                <ul>
+                    <li>Estar dispuesto a aprender nuevas tecnologías y adaptarse a cambios en el desarrollo web.</li>
+                </ul>
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="habjs ms-2 me-auto">
+                <div class="fw-bold">Gestión del Tiempo:</div>
+                <ul>
+                    <li>Habilidad para gestionar múltiples tareas y proyectos simultáneamente, priorizando según las necesidades.</li>
+                </ul>
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="habjs ms-2 me-auto">
+                <div class="fw-bold">Atención al Detalle:</div>
+                <ul>
+                    <li>Prestar atención a los detalles para asegurar la calidad y precisión en el desarrollo de interfaces.</li>
+                </ul>
+                </div>
+            </li>
+        </ol>
+        </div>
+
+      
+        <!--MUESTRARIO DE PROYECTOS-->
+        <div class="container-sm py-4 mb-5 border border-2 rounded" id="divproyectos">
+            <h1 id="botonmuestrario9">Proyectos Realizados</h1>
+            <!--BOTONES MUESTRARIO-->
+            <div class="mb-2">
+                <button type="button" class="btn btn-warning m-1" id="btnmuestrario1"><i class="bi bi-filetype-html"></i> HTML</button>
+                <button type="button" class="btn btn-warning m-1" id="btnmuestrario2"><i class="bi bi-card-list"></i> FORMULARIOS</button>
+                <button type="button" class="btn btn-warning m-1" id="btnmuestrario3"><i class="bi bi-filetype-css"></i> CSS</button>
+                <button type="button" class="btn btn-warning m-1" id="btnmuestrario4"><i class="bi bi-bootstrap-fill"></i> BOOTSTRAP</button>
+                <button type="button" class="btn btn-warning m-1" id="btnmuestrario5"><i class="bi bi-filetype-js"></i> JAVASCRIPT</button>
+                <button type="button" class="btn btn-warning m-1" id="btnmuestrario6"><i class="bi bi-wifi-2"></i>JQUERY</button>
+            </div>
+            <!--MUESTRARIO HTML-->
+            <div id="muestrario1" class="muestrario border border-2 rounded p-2" style="display: block;">
+            <h1>Leonardo da Vinci</h1>
+            <p>
+                Considerado el paradigma del homo universalis, del sabio renacentista versado en todos los ámbitos del conocimiento humano, Leonardo da Vinci (1452-1519) incursionó en campos tan variados como la aerodinámica, la hidráulica, la anatomía, la botánica, la pintura, la escultura y la arquitectura, entre otros. Sus investigaciones científicas fueron, en gran medida, olvidadas y minusvaloradas por sus contemporáneos; su producción pictórica, en cambio, fue de inmediato reconocida como la de un maestro capaz de materializar el ideal de belleza en obras de turbadora sugestión y delicada poesía.
+            </p>
+            <div align='center'><img src="https://www.biografiasyvidas.com/monografia/leonardo/fotos/leonardo340.jpg" alt="Recreación de un retrato de Leonardo" width="340" height="439"></div>
+            <h4><div align='center'>Recreación de un retrato de Leonardo</div></h4>
+            <p>
+                En el plano artístico, Leonardo conforma, junto con <a href="https://www.biografiasyvidas.com/biografia/m/miguel_angel.htm">Miguel Ángel</a> y <a href="https://www.biografiasyvidas.com/biografia/r/rafael.htm">Rafael</a>, la tríada de los grandes maestros del Cinquecento, y, pese a la parquedad de su obra, la historia de la pintura lo cuenta entre sus mayores genios. Por los demás, es posible que de la poderosa fascinación que suscitan sus obras maestras (con La Gioconda a la cabeza) proceda aquella otra fascinación en torno a su figura que no ha cesado de crecer con los siglos, alimentada por los múltiples enigmas que envuelven su biografía, algunos de ellos triviales, como la escritura de derecha a izquierda, y otros ciertamente inquietantes, como aquellas visionarias invenciones cinco siglos adelantadas a su tiempo.
+            </p>
+            <h2>Juventud y descubrimientos técnicos</h2>
+            <p>
+                Leonardo nació en 1452 en la villa toscana de Vinci, hijo natural de una campesina, Caterina (que se casó poco después con un artesano de la región), y de Ser Piero, un rico notario florentino. Italia era entonces un mosaico de ciudades-estado como Florencia, pequeñas repúblicas como Venecia y feudos bajo el poder de los príncipes o el papa. El Imperio romano de Oriente cayó en 1453 ante los turcos y apenas sobrevivía aún, muy reducido, el Sacro Imperio Romano Germánico; era una época violenta en la que, sin embargo, el esplendor de las cortes no tenía límites.
+            </p>
+            <p>
+                Para leer más información sobre <b>Leonardo da Vinci</b> puedes dirigirte a la página web <a href="https://www.biografiasyvidas.com/monografia/leonardo/">biografiasyvidas.com</a>
+            </p>
+        
+            </div>
+        
+            <!--MUESTRARIO FORMULARIO-->
+            <div id="muestrario2" class="muestrario border border-2 rounded p-2" style="display: none;">
+            <h1><div align='center'>Formulario</div></h1>
+            <form action="" method="post">
+                
+                <label for="nombre">NOMBRE:<br></label>
+                <input type="text" name="nombre" id="nombre" placeholder="Juanin" class="d-block">
+                
+                <label for="direccion"><br><br>DIRECCION:<br></label>
+                <input type="text" name="direccion" id="direccion" placeholder="15 norte" class="d-block">
+                
+                <label for="especialidad"><br><br>ESPECIALIDAD MEDICA:<br></label>
+                <select name="especialidad" id="especialidad" class="d-block">
+                    <option value="MEDICINA INTERNA">MEDICINA INTERNA</option>
+                    <option value="MEDICINA GENERAL">MEDICINA GENERAL</option>
+                    <option value="TRAUMATOLOGIA">TRAUMATOLOGIA</option>
+                    <option value="NUTRICIONISTA">NUTRICIONISTA</option>
+                </select>
+                <label for="fecha"><br><br>FECHA:<br></label>
+                <input type="date" name="fecha" id="fecha" class="d-block">
+                <label for="hora"><br><br>HORA:<br></label>
+                <input type="time" name="hora" id="hora" class="d-block">
+                <label for="correo"><br><br>CORREO<br></label>
+                <input type="email" name="correo" id="correo" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" placeholder="Juanin@31min.com" class="d-block" required>
+                <label for="rut"><br><br>RUT:<br></label>
+                <input type="text" name="rut" id="rut" pattern="^[0-9]+-[0-9kK]{1}$" placeholder="18300168-k" class="d-block" required>
+                <button class="m-3">Enviar</button>
+            </form>
+            </div>
+        
+            <!--MUESTRARIO CSS-->
+            <div id="muestrario3" class="muestrario border border-2 rounded p-2" style="display: none;">
+                <div class="rosado"></div>
+                <div class="verde"></div>
+                <div class="azul"></div>
+                <div class="rojo"></div>
+                <div class="morado"></div>
+                <div class="gris"></div>
+        
+            </div>
+        
+            <!--MUESTRARIO BOOTSTRAP-->
+            <div id="muestrario4" class="muestrario border border-2 rounded p-2" style="display: none;">
+                <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark"">
+                    <div class=" container-fluid">
+                <a class="navbar-brand" href="#">SKYP</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="#">Planifica tu Viaje</a>
+                    <a class="nav-link" href="#">Administra tu vuelo</a>
+                    <a class="nav-link" href="#">Check-In</a>
+                    <a class="nav-link" href="#">Centro de Ayuda</a>
+                    </div>
+                </div>
+                </div>
+                </nav>
+                
+                <p class="h2" style="margin: 3%; margin-top: 2%; margin-bottom: 2%;">Viaja con precios ultra rebajados a los mejores
+                destinos</p>
+                
+                <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-inline: 10%;">
+                <div class="col">
+                    <div class="card h-100">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/ObeliscoBA2015.2.jpg/1280px-ObeliscoBA2015.2.jpg"
+                        class="card-img-top" alt="Buenos Aires">
+                    <div class="card-body">
+                        <h5 class="card-title">Buenos Aires</h5>
+                        <p class="card-text">Buenos Aires es la gran capital cosmopolita de Argentina. Su centro es la Plaza de Mayo,
+                        rodeada de imponentes edificios del siglo XIX, incluida la Casa Rosada, el icónico palacio presidencial que
+                        tiene varios balcones.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">
+                        <link href="#">Ver más</link>
+                        </small>
+                    </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Machu_Picchu%2C_Peru_%282018%29.jpg/1280px-Machu_Picchu%2C_Peru_%282018%29.jpg"
+                        class="card-img-top" alt="Machu Picchu">
+                    <div class="card-body">
+                        <h5 class="card-title">Machu Picchu</h5>
+                        <p class="card-text">Machu Picchu es una ciudadela inca ubicada en las alturas de las montañas de los Andes en
+                        Perú, sobre el valle del río Urubamba. Se construyó en el siglo XV y luego fue abandonada, y es famosa por sus
+                        sofisticadas paredes de piedra seca que combinan enormes bloques sin el uso de un mortero, los edificios
+                        fascinantes que se relacionan con las alineaciones astronómicas y sus vistas panorámicas.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">
+                        <link href="#">Ver más</link>
+                        </small>
+                    </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Praia_do_Leblon.JPG/1280px-Praia_do_Leblon.JPG" class="card-img-top" alt="Río de Janeiro">
+                    <div class="card-body">
+                        <h5 class="card-title">Río de Janeiro</h5>
+                        <p class="card-text">Río de Janeiro es una enorme ciudad costera de Brasil, famosa por sus playas de Copacabana
+                        e Ipanema, la estatua del Cristo Redentor de 38 m de alto sobre el cerro del Corcovado y el morro Pan de
+                        Azúcar, una cima de granito con teleféricos que ascienden a su cima.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">
+                        <link href="#">Ver más</link>
+                        </small>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        
+            </div>
+        
+            <!--MUESTRARIO JS-->
+            <div id="muestrario5" class="muestrario border border-2 rounded p-2" style="display: none;">
+            <div class="container text-center mt-4">
+                <h3>LISTA DE TAREAS PENDIENTES</h3>
+            </div>
+            <div class="container">
+                <button type="button" class="btn btn-success" onclick="abrirFormulario()">
+                Agregar tarea</button>
+        
+                <div id="formulario" style="display: none;"> 
+                <form action="" id="formulariooo">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Nueva tarea</label>
+                        <input type="text" class="form-control" id="nuevaTarea" >
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-primary" onclick="agregarTarea()">Agregar</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+            <div class="container mt-5">
+            <table class="table" id="tabla-tareas">
+                <thead>
+                <tr>        
+                    <th scope="col">Tarea</th>
+                    <th scope="col">Finalizar</th>
+                </tr>
+                </thead>
+                <tbody id="cuerpo-tabla">
+                <tr>           
+                    <td></td>
+                    <td></td>           
+                </tr>         
+                </tbody>
+            </table>
+            </div>
+            </div>
+        
+            <!--MUESTRARIO JQuery-->
+            <div id="muestrario6" class="muestrario border border-2 rounded p-2" style="display: none;">
+            <div class="caja1 container">
+                <div id="muestrario6text1" style="background-color: #eb984e;">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, accusantium distinctio accusamus totam rem at ex alias labore veniam aliquam nisi recusandae esse voluptatum culpa veritatis enim porro dolor quis?</p>
+                </div>
+                <div id="muestrario6text2" style="background-color: #f7dc6f; display: none;">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, accusantium distinctio accusamus totam rem at ex alias labore veniam aliquam nisi recusandae esse voluptatum culpa veritatis enim porro dolor quis?</p>
+                </div>
+            </div>
+            <div class="container" id="muestrario6caja2" >
+                <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2022/04/pac-man-2682107.jpg?tf=3840x" id="muestrario6img" width="20%" alt="PAC-MAN">
+            </div>
+            <div class="container" id="muestrario6caja3">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente laudantium aliquid rem consequatur eius nemo alias provident sunt et voluptate in aut, quas hic quia dolores, corrupti voluptatem reiciendis facere.</p>
+            </div>
+            </div>
+        </div>
+    
+
+        <!--FORMULARIO DE CONTACTO-->
+        <div class="container-sm py-4 mb-5 border border-2 rounded" id="divcontactos">
+            <h2 class="text-center fw-bold">Formulario de contacto</h2>
+            <form id="formcontacto">
+                <div class="mb-3 mx-2">
+                    <label for="nombrecontacto" class="form-label fw-bold">Nombre</label>
+                    <input type="text" class="form-control" id="nombrecontacto" placeholder="Marcos" required>
+                </div>
+                <div class="mb-3 mx-2">
+                    <label for="apellidocontacto" class="form-label fw-bold">Apellido</label>
+                    <input type="text" class="form-control" id="apellidocontacto" placeholder="Ortega" required>
+                </div>
+                <div class="mb-3 mx-2">
+                    <label for="Emailcontacto" class="form-label fw-bold">Email</label>
+                    <input type="email" class="form-control" id="Emailcontacto" placeholder="marcos.ortega@ejemplo.com" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required>
+                    <div id="emailHelp" class="form-text">Nunca compartiremos tu Email con nadie</div>
+                </div>
+                <div class="mb-3 mx-2">
+                    <label for="motivocontacto" class="form-label fw-bold fw-bold">Motivo de contacto</label>
+                    <select class="form-select" id="motivocontacto" placeholder="Elija una opción" required>
+                        <option value="1">Información</option>
+                        <option value="2">Trabajo</option>
+                        <option value="3">Otro</option>
+                    </select>
+                </div>
+                <div class="mb-3 mx-2">
+                    <label for="textocontacto" class="form-label fw-bold">Mensaje:</label>
+                    <textarea class="form-control" id="textocontacto" rows="4" required></textarea>
+                </div>
+                <div class="mb-3 mx-2 ">
+                    <button type="submit" class="btn btn-warning d-block mx-auto fw-bold">Enviar</button>
+                </div>
+            </form>
+            <div id="alertcontacto" class="alert alert-warning fw-bold" role="alert" style="display:none;">
+                <i class="bi bi-check-circle-fill"></i> El formulario se envío correctamente !
+            </div>
+        </div>
+
+
+        <!--FOOTER-->
+        <div class="container bottom-0">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                    <a href="#" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                        <img src="assets/img/img-miniatura.png" alt="Logo" width="30" height="30"
+                            class="d-inline-block align-text-top me-2">
+                    </a>
+                    <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Sebastián Collao G, Company</span>
+                </div>
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <li class="ms-3"><button type="button" class="btn btn-warning" ><a class="text-bg-warning" href="https://www.facebook.com/sebastiangonzaloc"><i class="bi bi-facebook"></i></a></button></li>
+                    <li class="ms-3"><button type="button" class="btn btn-warning" ><a class="text-bg-warning" href="https://www.instagram.com/bote_inflable?igsh=ZGdrdWZreThsYWY3 "><i class="bi bi-instagram"></a></i></button></li>
+                    <li class="ms-3"><button type="button" class="btn btn-warning" ><a class="text-bg-warning" href="https://api.whatsapp.com/send?phone=56988911030"><i class="bi bi-whatsapp"></i></a></button></li>
+                    <li class="ms-3"><button type="button" class="btn btn-warning" ><a class="text-bg-warning" href="https://www.linkedin.com/in/sebastian-collao-galdames-b8408b12a/"><i class="bi bi-linkedin"></i></a></button></li>
+                    <li class="ms-3"><button type="button" class="btn btn-warning" ><a class="text-bg-warning" href="https://github.com/Don-Bote"><i class="bi bi-github"></i></a></button></li>
+                </ul>
+            </footer>
+        </div>
+
+        <!--Script Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <!--Script JS-->
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/script-muestrario.js"></script>
+    
+</body>
+</html>
